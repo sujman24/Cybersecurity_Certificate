@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Demo - CyberTech</title>
+  <link rel="stylesheet" href="../Styles/demo_styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="../Cybersecurity_Certification.html">Home</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="course.html">Course</a></li>
+        <li><a href="demo.html" class="active">Demo</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li id="authButton"></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner">
+    <h1>Cybersecurity Interactive Demo</h1>
+    <p>Explore essential cybersecurity topics, from two-factor authentication to encryption, with interactive audio insights.</p>
+  </div>
+  <div class="demo-container">
+    <section class="demo-section fade-in">
+      <h2>Security Demonstration</h2>
+      <p>Learn about secure authentication and data privacy through our audio guide.</p>
+      <audio src="../Audio/Security_Demo.mp3" controls></audio>
+    </section>
+    <section class="demo-section slide-in-left">
+      <h2>Two-Factor Authentication</h2>
+      <p>Add an extra layer of security by requiring a second form of verification.</p>
+      <audio src="../Audio/2FA.mp3" controls></audio>
+    </section>
+    <section class="demo-section zoom-in">
+      <h2>Encryption Techniques</h2>
+      <p>Encryption protects data by converting it into a secure code to prevent unauthorized access. Learn how encryption keeps your information safe.</p>
+      <audio src="../Audio/Encryption_Techniques.mp3" controls></audio>
+    </section>
+    <section class="demo-section slide-in-right">
+      <h2>Threat Detection</h2>
+      <p>Understand how threat detection systems identify and mitigate cybersecurity risks in real-time, ensuring proactive protection.</p>
+      <audio src="../Audio/Threat_Detection.mp3" controls></audio>
+    </section>
+    <section class="demo-section fade-in">
+      <h2>Firewall Protection</h2>
+      <p>Firewalls act as barriers between trusted and untrusted networks, filtering out harmful traffic. Discover how firewalls protect your data.</p>
+      <audio src="../Audio/Firewall Protection.mp3" controls></audio>
+    </section>
+    <section class="demo-section fade-in">
+      <h2>Real-Life Examples</h2>
+      <p>See how cybersecurity practices are applied in real-world scenarios to secure data and prevent breaches.</p>
+      <audio src="../Audio/Real_Life.mp3" controls></audio>
+    </section>
+  </div>
+  <div class="next-section">
+    <a href="#" class="next-button" onclick="showModal()">Proceed to Quiz</a>
+  </div>
+  <footer>
+    <p>© 2024 CyberTech. All rights reserved.</p>
+  </footer>
+
+  <div class="modal-overlay" id="quizModal">
+    <div class="modal">
+      <h2>Are You Ready for the Quiz?</h2>
+      <p>This will be a 30-minute quiz with 20 questions. You need 80% to pass. Do you want to proceed?</p>
+      <div class="modal-buttons">
+        <button onclick="proceedToQuiz()">Yes</button>
+        <button onclick="redirectToModules()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../Scripts/script.js">
+    function showModal() {
+      document.getElementById('quizModal').classList.add('show');
+    }
+    function proceedToQuiz() {
+      window.location.href = "quiz.html";
+    }
+    function redirectToModules() {
+      document.getElementById('quizModal').classList.remove('show');
+      window.location.href = "modules.html";
+    }
+  </script>
+</body>
+</html>

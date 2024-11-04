@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberTech Quiz</title>
+  <link rel="stylesheet" href="../Styles/quiz_styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Modules</a></li>
+        <li><a href="">Course</a></li>
+        <li><a href="">Demo</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Account</a></li>
+        <li id="authButton"></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="start-overlay">
+    <h1>Welcome to the Cybersecurity Quiz</h1>
+    <p>Click the button below to begin. Remember:</p>
+    <ul>
+      <li>20 questions</li>
+      <li>30-minute timer</li>
+      <li>Maximum 5 incorrect answers allowed</li>
+    </ul>
+    <button id="start-button" onclick="startQuiz()">Start Quiz</button>
+  </div>
+  <div class="container">
+    <div class="section">
+      <h1>Cybersecurity Quiz</h1>
+      <p id="timer">Time left: 30:00</p>
+      <div id="progress">
+        <p id="score-percentage">Score: 0%</p>
+        <p id="incorrect-count">Incorrect: 0</p>
+      </div>
+      <div id="question-container">
+        <p id="question-text"></p>
+        <div id="answers-container"></div>
+      </div>
+      <div class="quiz-navigation">
+        <button id="prevButton" onclick="prevQuestion()">Previous</button>
+        <button id="nextButton" onclick="nextQuestion()">Next</button>
+      </div>
+    </div>
+  </div>
+  <div id="result-overlay" class="result-popup" style="display: none;">
+    <h2 id="result-message"></h2>
+    <p id="result-details"></p>
+    <button onclick="restartQuiz()">Close</button>
+  </div>
+  <footer>
+    <p>© 2024 CyberTech. All rights reserved.</p>
+  </footer>
+  <script src="../Scripts/quiz_script.js"></script>
+</body>
+</html>

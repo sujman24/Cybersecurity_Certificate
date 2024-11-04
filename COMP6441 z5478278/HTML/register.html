@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="../Styles/styles1.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Create Your CyberTech Account</h2>
+      <p class="auth-subtext">Join us and start your cybersecurity journey</p>
+      
+      <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+        <button type="button" onclick="registerUser()" class="auth-button">Register</button>
+        <p id="registerMessage" class="error-message"></p>
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function registerUser() {
+      const username = document.getElementById("regUsername").value;
+      const password = document.getElementById("regPassword").value;
+      const confirmPassword = document.getElementById("regConfirmPassword").value;
+      if (password !== confirmPassword) {
+        document.getElementById("registerMessage").textContent = "Passwords do not match!";
+        return;
+      }
+      else if (username == password) {
+        document.getElementById("registerMessage").textContent = "Password cannot match the Username!";
+        return;
+      } else if (password.length < 8) {
+        document.getElementById("registerMessage").textContent = "Password must be at least 8 characters long!";
+        return;
+      } else if (!/[A-Z]/.test(password)) {
+        document.getElementById("registerMessage").textContent = "Password must contain at least one uppercase letter!";
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        document.getElementById("registerMessage").textContent = "Password must contain at least one lowercase letter!";
+        return;
+      } else if (!/\d/.test(password)) {
+        document.getElementById("registerMessage").textContent = "Password must contain at least one digit!";
+        return;
+      } else if (!/[.@$#^()_-`~!%*?&]/.test(password)) {
+        document.getElementById("registerMessage").textContent = "Password must contain at least one special character!";
+        return;
+      }
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+      localStorage.setItem("loggedIn", "true");
+      document.getElementById("registerMessage").textContent = "Registration successful!";
+      document.getElementById("registerMessage").classList.add("success-message");
+      setTimeout(() => window.location.href = "../Cybersecurity_Certification.html", 1000);
+    }
+  </script>
+</body>
+</html>

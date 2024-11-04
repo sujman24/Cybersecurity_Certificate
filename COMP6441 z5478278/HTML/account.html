@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Dashboard</title>
+  <link rel="stylesheet" href="../Styles/account_styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="../Cybersecurity_Certification.html">Home</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="course.html">Course</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="account.html" class="active">Account</a></li>
+        <li id="authButton"></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="section dashboard">
+      <h1>Account Dashboard</h1>
+      <div class="dashboard-section profile-section">
+        <h2>Your Profile</h2>
+        <form id="profile-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter new password">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm new password">
+          <button type="button" onclick="saveProfile()">Save Profile</button>
+        </form>
+      </div>
+      <div class="dashboard-section progress-section">
+        <h2>Course Progress</h2>
+        <div id="progress-bar">
+          <div id="progress-status">0%</div>
+        </div>
+      </div>
+      <div class="dashboard-section feedback-section">
+        <h2>Feedback</h2>
+        <textarea id="feedback" rows="4" placeholder="Share your feedback..."></textarea>
+        <button onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+      <div class="dashboard-section certificate-section">
+        <h2>Certificate</h2>
+        <button onclick="downloadCertificate()" id="certificate-button" disabled>Download Certificate</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2024 CyberTech. All rights reserved.</p>
+  </footer>
+  <script src="../Scripts/script.js"></script>
+</body>
+</html>
