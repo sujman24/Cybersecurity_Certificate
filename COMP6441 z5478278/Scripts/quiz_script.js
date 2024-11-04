@@ -452,7 +452,7 @@ const allQuestions = [
 ];
 
 const quizQuestions = [];
-while (quizQuestions.length < 1) {
+while (quizQuestions.length < 20) {
   const randomIndex = Math.floor(Math.random() * allQuestions.length);
   const question = allQuestions[randomIndex];
   if (!quizQuestions.includes(question)) {
